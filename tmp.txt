@@ -1,0 +1,97 @@
+nadrpo@daedalus:~/megahurtz/fileserver-backup$ python3 ./hdd_selector.py 
+/home/nadrpo/megahurtz/fileserver-backup/./hdd_selector.py:12: DeprecationWarning: Will be removed in 1.0. Access properties with Device.properties.
+  if 'DEVNAME' in device and device['DEVTYPE'] == 'disk':  # Check if it is a disk device
+/home/nadrpo/megahurtz/fileserver-backup/./hdd_selector.py:13: DeprecationWarning: Will be removed in 1.0. Access properties with Device.properties.
+  devname = device['DEVNAME']
+Device Node: /dev/sdb
+Sysfs Path: /sys/devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0/host2/target2:0:0/2:0:0:0/block/sdb
+CURRENT_TAGS: :systemd:
+DEVLINKS: /dev/disk/by-id/usb-WD_My_Passport_2665_5758333244323236314E3844-0:0 /dev/disk/by-path/pci-0000:00:14.0-usb-0:2:1.0-scsi-0:0:0:0
+DEVNAME: /dev/sdb
+DEVPATH: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0/host2/target2:0:0/2:0:0:0/block/sdb
+DEVTYPE: disk
+DISKSEQ: 89
+ID_BUS: usb
+ID_INSTANCE: 0:0
+ID_MODEL: My_Passport_2665
+ID_MODEL_ENC: My\x20Passport\x202665
+ID_MODEL_ID: 2665
+ID_PART_TABLE_TYPE: gpt
+ID_PART_TABLE_UUID: 922f3348-386a-4f08-b1ce-99ccdb1c174f
+ID_PATH: pci-0000:00:14.0-usb-0:2:1.0-scsi-0:0:0:0
+ID_PATH_TAG: pci-0000_00_14_0-usb-0_2_1_0-scsi-0_0_0_0
+ID_REVISION: 2007
+ID_SERIAL: WD_My_Passport_2665_5758333244323236314E3844-0:0
+ID_SERIAL_SHORT: 5758333244323236314E3844
+ID_TYPE: disk
+ID_USB_DRIVER: usb-storage
+ID_USB_INTERFACES: :080650:
+ID_USB_INTERFACE_NUM: 00
+ID_VENDOR: WD
+ID_VENDOR_ENC: WD\x20\x20\x20\x20\x20\x20
+ID_VENDOR_ID: 1058
+MAJOR: 8
+MINOR: 16
+SUBSYSTEM: block
+TAGS: :systemd:
+USEC_INITIALIZED: 24815342976
+
+Device Node: /dev/sda
+Sysfs Path: /sys/devices/pci0000:00/0000:00:1f.2/ata1/host0/target0:0:0/0:0:0:0/block/sda
+CURRENT_TAGS: :systemd:
+DEVLINKS: /dev/disk/by-id/wwn-0x5e83a972004d8704 /dev/disk/by-id/ata-TOSHIBA-TR150_66QB44BBK8XU /dev/disk/by-path/pci-0000:00:1f.2-ata-1 /dev/disk/by-path/pci-0000:00:1f.2-ata-1.0
+DEVNAME: /dev/sda
+DEVPATH: /devices/pci0000:00/0000:00:1f.2/ata1/host0/target0:0:0/0:0:0:0/block/sda
+DEVTYPE: disk
+DISKSEQ: 9
+ID_ATA: 1
+ID_ATA_DOWNLOAD_MICROCODE: 1
+ID_ATA_FEATURE_SET_APM: 1
+ID_ATA_FEATURE_SET_APM_CURRENT_VALUE: 254
+ID_ATA_FEATURE_SET_APM_ENABLED: 1
+ID_ATA_FEATURE_SET_HPA: 1
+ID_ATA_FEATURE_SET_HPA_ENABLED: 1
+ID_ATA_FEATURE_SET_PM: 1
+ID_ATA_FEATURE_SET_PM_ENABLED: 1
+ID_ATA_FEATURE_SET_SECURITY: 1
+ID_ATA_FEATURE_SET_SECURITY_ENABLED: 0
+ID_ATA_FEATURE_SET_SECURITY_ENHANCED_ERASE_UNIT_MIN: 2
+ID_ATA_FEATURE_SET_SECURITY_ERASE_UNIT_MIN: 2
+ID_ATA_FEATURE_SET_SECURITY_FROZEN: 1
+ID_ATA_FEATURE_SET_SMART: 1
+ID_ATA_FEATURE_SET_SMART_ENABLED: 1
+ID_ATA_ROTATION_RATE_RPM: 0
+ID_ATA_SATA: 1
+ID_ATA_SATA_SIGNAL_RATE_GEN1: 1
+ID_ATA_SATA_SIGNAL_RATE_GEN2: 1
+ID_ATA_WRITE_CACHE: 1
+ID_ATA_WRITE_CACHE_ENABLED: 1
+ID_BUS: ata
+ID_MODEL: TOSHIBA-TR150
+ID_MODEL_ENC: TOSHIBA-TR150\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+ID_PART_TABLE_TYPE: dos
+ID_PART_TABLE_UUID: 60eb190f
+ID_PATH: pci-0000:00:1f.2-ata-1.0
+ID_PATH_ATA_COMPAT: pci-0000:00:1f.2-ata-1
+ID_PATH_TAG: pci-0000_00_1f_2-ata-1_0
+ID_REVISION: SAFZ12.3
+ID_SERIAL: TOSHIBA-TR150_66QB44BBK8XU
+ID_SERIAL_SHORT: 66QB44BBK8XU
+ID_TYPE: disk
+ID_WWN: 0x5e83a972004d8704
+ID_WWN_WITH_EXTENSION: 0x5e83a972004d8704
+MAJOR: 8
+MINOR: 0
+SUBSYSTEM: block
+TAGS: :systemd:
+USEC_INITIALIZED: 3212475
+
+nadrpo@daedalus:~/megahurtz/fileserver-backup$ df -Th
+Filesystem     Type     Size  Used Avail Use% Mounted on
+tmpfs          tmpfs    1.6G  2.3M  1.6G   1% /run
+/dev/sda1      ext4     440G   54G  364G  13% /
+tmpfs          tmpfs    7.6G   66M  7.5G   1% /dev/shm
+tmpfs          tmpfs    5.0M  4.0K  5.0M   1% /run/lock
+tmpfs          tmpfs    1.6G  160K  1.6G   1% /run/user/1000
+/dev/sdb1      fuseblk  4.6T  595G  4.0T  13% /media/nadrpo/5tb-portable
+nadrpo@daedalus:~/megahurtz/fileserver-backup$ 
