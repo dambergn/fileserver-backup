@@ -9,16 +9,19 @@ def list_devices():
 
 def format_device(device, label):
     try:
+        device_path = f'/dev/{device}'
+
         # Create a new partition table
-        subprocess.run(['sudo', 'parted', '-s', f'/dev/{device}', 'mklabel', 'gpt'], check=True)
+        subprocess.run(['sudo', 'parted', '-s', device_path, 'mklabel', 'gpt'], check=True)
 
         # Create a new partition
-        subprocess.run(['sudo', 'parted', '-s', f'/dev/{device}', 'mkpart', 'primary', '0%', '100%'], check=True)
+        subprocess.run(['sudo', 'parted', '-s', device_path, 'mkpart', 'primary', '0%', '100%'], check=True)
 
         # Format the partition to exFAT
-        subprocess.run(['sudo', 'mkfs.exfat', '-n', label, f'/dev/{device}1'], check=True)
+        partition_path = f'{device_path}1'
+        subprocess.run(['sudo', 'mkfs.exfat', '-n', label, partition_path], check=True)
 
-        print(f"Device /dev/{device}1 formatted to exFAT with label '{label}'")
+        print(f"Device {partition_path} formatted to exFAT with label '{label}'")
     except subprocess.CalledProcessError as e:
         print(f"Error formatting device: {e}")
     except Exception as e:
@@ -26,8 +29,8 @@ def format_device(device, label):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python3 format_exfat.py <device> <label>")
-        print("Example: python3 format_exfat.py sdb MyLabel")
+        print("Usage: sudo python3 format_exfat.py <device> <label>")
+        print("Example: sudo python3 format_exfat.py sdb MyLabel")
         sys.exit(1)
 
     device = sys.argv[1]
