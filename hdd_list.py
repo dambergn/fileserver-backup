@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 ## Dependencies
 # sudo apt install python3-pip
-# pip install pyudev
 
 import json
-# import psutil
-# import pyudev
 from pyudev import Devices, Context
 import subprocess
 
