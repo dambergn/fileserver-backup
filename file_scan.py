@@ -16,6 +16,11 @@ def ensure_root():
         print("This script must be run as root.")
         sys.exit(1)
 
+def ensure_dir(directory):
+    """Ensure a directory exists"""
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
 def mount_nfs(server, remote_dir, local_mount):
     # Check if local mount point exists. If not, create it.
     if not os.path.exists(local_mount):
@@ -124,6 +129,7 @@ if  __name__ == "__main__":
             filename = f"./db/{local_mount}.json"
             files_info = get_file_info(directory)
 
+        ensure_dir('./db')
         save_as_json(files_info, filename)
     finally:
         unmount_nfs(fixed_local_mount)
