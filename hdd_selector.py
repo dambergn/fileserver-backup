@@ -82,4 +82,4 @@ if __name__ == "__main__":
     
     print(json_data)  # Print the JSON data
 
-    get_disk_info(json_data)
+    # get_disk_info(available_devices)
